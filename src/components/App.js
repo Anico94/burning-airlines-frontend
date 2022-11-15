@@ -1,23 +1,22 @@
-import logo from './logo.svg';
-import './App.css';
+import '../App.css';
+
+import Flight from './Flight';
+import Flights from './Flights';
+import SearchFlight from './SearchFlight';
+import Airplane from './Airplane';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Airplane />
+      <hr></hr>
+      <Flights />
+      <hr></hr>
+      <Flight />
+      <hr></hr>
+      <SearchFlight />
+      <hr></hr>
+
     </div>
   );
 }
