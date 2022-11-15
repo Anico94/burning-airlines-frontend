@@ -16,7 +16,6 @@ function App() {
       <hr></hr>
       <SearchFlight />
       <hr></hr>
-
     </div>
   );
 }
