@@ -1,9 +1,10 @@
-import '../App.css';
+import "../App.css";
 
-import Flight from './Flight';
-import Flights from './Flights';
-import SearchFlight from './SearchFlight';
-import Airplane from './Airplane';
+import Flight from "./Flight";
+import Flights from "./Flights";
+import SearchFlight from "./SearchFlight";
+import Airplane from "./Airplane";
+import User from "./User";
 
 function App() {
   return (
@@ -16,7 +17,8 @@ function App() {
       <hr></hr>
       <SearchFlight />
       <hr></hr>
-
+      <User />
+      <hr></hr>
     </div>
   );
 }
