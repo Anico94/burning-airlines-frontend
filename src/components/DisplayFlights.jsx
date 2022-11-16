@@ -1,10 +1,10 @@
 import React from 'react'
 
 
-const DisplayFlights = function (){
+const DisplayFlights = function (props){
     return(
         <div>
-            <p>This will show all the flights</p>
+            {props.flights.map((flight)=> <p>{`Flight No: ${flight.flightNumber} on ${flight.date} from ${flight.from} to ${flight.to} on plane ${flight.plane}`}</p>)}
         </div>
     )
 }
