@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
+import CurrentFlight from './CurrentFlight'
+import SeatingPlan from './SeatingPlan'
 
 const Flight = function() {
 
+    const [seat, setSeat] = useState('')
+
     return(
         <div>
-            This is the flight view
+            <h1>Heading Coming Soon</h1>
+            <CurrentFlight />
+            <SeatingPlan/>
         </div>
     )
 }

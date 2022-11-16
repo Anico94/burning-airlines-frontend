@@ -40,3 +40,29 @@
 .App .create-flight{
   background-color: blue;
 }
+
+.plane-carpet{
+  background-color: blue;
+}
+
+.row-buttons{
+  display: flex;
+  justify-content: center;
+  margin: 5px 0;
+}
+
+.seat-buttons{
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.seat-taken{
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+  margin-right: 5px;
+  pointer-events: none;
+  background-color: red;
+}
