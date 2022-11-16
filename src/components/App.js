@@ -21,7 +21,6 @@ function App() {
       <hr></hr>
       <SearchPage />
       <hr></hr>
-
     </div>
   );
 }
