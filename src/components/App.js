@@ -1,22 +1,18 @@
 import "../App.css";
 
-<<<<<<< HEAD
 import Flight from "./Flight";
 import Flights from "./Flights";
 import SearchFlight from "./SearchFlight";
 import Airplane from "./Airplane";
 import User from "./User";
-=======
-import Flight from './Flight';
-import Flights from './Flights';
 import SearchPage from './SearchPage';
 import Airplane from './Airplane';
-import axios from 'axios'
+import axios from 'axios';
 
 // const api = axios.create({
 //   baseURL: 
 // })
->>>>>>> 14b38fbe150262d42f9c8c20a64be513bfd4f106
+
 
 function App() {
   return (
