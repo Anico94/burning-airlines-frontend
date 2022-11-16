@@ -5,14 +5,12 @@ import Flights from "./Flights";
 import SearchFlight from "./SearchFlight";
 import Airplane from "./Airplane";
 import User from "./User";
-import SearchPage from './SearchPage';
-import Airplane from './Airplane';
-import axios from 'axios';
+import SearchPage from "./SearchPage";
+import axios from "axios";
 
 // const api = axios.create({
-//   baseURL: 
+//   baseURL:
 // })
-
 
 function App() {
   return (
@@ -25,11 +23,8 @@ function App() {
       <hr></hr>
       <SearchPage />
       <hr></hr>
-<<<<<<< HEAD
       <User />
       <hr></hr>
-=======
->>>>>>> 14b38fbe150262d42f9c8c20a64be513bfd4f106
     </div>
   );
 }
