@@ -7,7 +7,7 @@ const SeatingPlan = () => {
     const [planeRows, setPlaneRows ] = useState(0);
     const [planeColumns, setPlaneColumns ] = useState(0);
     const [reservedSeats, setReservedSeats] = useState([]);
-    const [current, setCurrent] = useState([])
+    const [current, setCurrent] = useState('')
 
     const flightsURL = `http://localhost:3000/flights.json`
 
@@ -64,7 +64,7 @@ const SeatingPlan = () => {
     const seatTaken = (bool, seat) =>{
         if(bool) {
             return 'seat-taken'
-        } else if (current.includes(seat)) {
+        } else if (seat === current) {
             return 'seat-taken'
         } else { 
             return 'seat-buttons'
@@ -73,8 +73,7 @@ const SeatingPlan = () => {
 
     const _handleBooking = (e) => {
         console.log(e.target.value)
-        setCurrent([...current,e.target.value])
-
+        setCurrent(e.target.value)
     }
 
     return (
