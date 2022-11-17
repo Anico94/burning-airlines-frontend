@@ -17,7 +17,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <BrowserRouter>
-      <nav className="nav nav-pills nav-fill">
+      <nav className="nav nav-pills nav-fill mb-5">
         <Link to="/" className="nav-item">User Login </Link>
         <Link to="/Airplane" className="nav-item">Airplane </Link>
         <Link to="/Flights" className="nav-item">Flights </Link>

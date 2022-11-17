@@ -29,13 +29,12 @@ const User = function () {
   };
 
   return (
-    <div className="col-md-10 mx-auto col-lg-5">
-      <div className="p-4 p-md-5 border rounded-3 bg-light">
+    <div className="col-md-10 mx-auto col-lg-5 mt-5">
         <h1>Logged in</h1>
         <form onSubmit={handleSubmit} className='p-4 p-md-5 border rounded-3 bg-light'>
             <div>
-              <label className="form-floating mb-3">Email</label>
-              <input
+              <label className="floatingInput form-floating mb-3">Email</label>
+              <input className="form-control"
                 type="text"
                 name="email"
                 value={state.email}
@@ -43,8 +42,8 @@ const User = function () {
               />
             </div>
             <div>
-              <label className="form-floating mb-3">Password</label>
-              <input
+              <label className="floatingInput form-floating mb-3">Password</label>
+              <input className="form-control"
                 type="password"
                 name="password"
                 value={state.password}
@@ -53,11 +52,11 @@ const User = function () {
             </div>
   
             <div>
-            <button className="w-100 btn btn-lg btn-primary"> Sign up</button>
-            <button onClick={handleLogout}>Sign Out</button>
+            <button className="w-100 btn btn-lg btn-primary mt-2"> Sign up</button>
+            <button className="w-100 btn btn-lg btn-primary mt-2" onClick={handleLogout}>Sign Out</button>
             </div>
             </form>
-            </div>
+           
       </div>
   );
   }
