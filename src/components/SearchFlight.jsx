@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react'
+import {Link} from 'react-router-dom'
 import flightsAPI from '../config/api';
 import axios from 'axios';
 
@@ -12,7 +13,7 @@ const SearchFlight = function() {
     const [formState, setFormState] = useState(initialFormState)
     const [flights, setFlights] = useState([])
 
-   function handleChange(event) {
+function handleChange(event) {
         setFormState({
             ...formState,
             [event.target.name] : event.target.value,
@@ -83,7 +84,7 @@ const SearchFlight = function() {
             <h4>Flights ID | Origin | Destination | Date</h4>
             {flights.map((flight) => {
 
-                return <p>{flight.flight_number}, {flight.origin}, {flight.destination}, {flight.date}</p>
+                return <p><Link to={`/Flights/${flight.id}`}>{flight.flight_number}</Link>, {flight.origin}, {flight.destination}, {flight.date}</p>
             })}
         </div>
 

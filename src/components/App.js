@@ -28,6 +28,7 @@ function App() {
         <Route path="/Flights" element={<Flights />} />
         <Route path="/Airplane" element={<Airplane />} />
         <Route path="/Flight" element={<Flight />} />
+          <Route path="/Flight/:id" element={<Flight />} />
         <Route path="/SearchPage" element={<SearchPage />} />
         <Route path="/" element={<User />} />
       </Routes>
