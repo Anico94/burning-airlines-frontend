@@ -30,6 +30,25 @@ export const login = (params) => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
+      console.log("you are login welocome");
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+};
+
+export const logout = (params) => {
+  const requestOptions = {
+    method: "POST",
+    credentials: "include",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(params),
+  };
+  fetch("http://localhost:3000/logout", requestOptions)
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      console.log("lol");
     })
     .catch((err) => {
       console.log(err);

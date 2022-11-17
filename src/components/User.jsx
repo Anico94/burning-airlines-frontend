@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useIdLoggedIn, login } from "../hooks";
+import { useIdLoggedIn, login, logout } from "../hooks";
 
 const User = function () {
   const isLoggedIn = useIdLoggedIn();
@@ -22,36 +22,41 @@ const User = function () {
     login(state);
   };
 
+  const handleLogout = (event) => {
+    event.preventDefault();
+    logout(state);
+  };
+
   return (
-    <div className="App">
-      {isLoggedIn ? (
+    <div>
+      <div>
         <h1>Logged in</h1>
-      ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="form-control">
-            <label>Email</label>
-            <input
-              type="text"
-              name="email"
-              value={state.email}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-control">
-            <label>Password</label>
-            <input
-              type="password"
-              name="password"
-              value={state.password}
-              onChange={handleInputChange}
-            />
-          </div>
-          <div className="form-control">
-            <label></label>
-            <button type="submit">Login</button>
-          </div>
-        </form>
-      )}
+      </div>
+      <form onSubmit={handleSubmit}>
+        <div className="form-control">
+          <label>Email</label>
+          <input
+            type="text"
+            name="email"
+            value={state.email}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-control">
+          <label>Password</label>
+          <input
+            type="password"
+            name="password"
+            value={state.password}
+            onChange={handleInputChange}
+          />
+        </div>
+        <div className="form-control">
+          <label></label>
+          <button type="submit">Login</button>
+          <button onClick={handleLogout}>Sign Out</button>
+        </div>
+      </form>
     </div>
   );
 };

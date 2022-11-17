@@ -7,22 +7,18 @@ import Airplane from "./Airplane";
 import User from "./User";
 import SearchPage from "./SearchPage";
 import axios from "axios";
-import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
-
-// const api = axios.create({
-//   baseURL:
-// })
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
-    <nav>
-      <Link to='/'>User Login </Link>
-      <Link to='/Airplane'>Airplane </Link>
-      <Link to='/Flights'>Flights </Link>
-      <Link to='/Flight'>Flight </Link>
-      <Link to='/SearchPage'>Search </Link>
-    </nav>
+      <nav>
+        <Link to="/">User Login </Link>
+        <Link to="/Airplane">Airplane </Link>
+        <Link to="/Flights">Flights </Link>
+        <Link to="/Flight">Flight </Link>
+        <Link to="/SearchPage">Search </Link>
+      </nav>
       <Routes>
         <Route path="/Flights" element={<Flights />} />
         <Route path="/Airplane" element={<Airplane />} />
