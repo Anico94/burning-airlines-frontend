@@ -1,10 +1,32 @@
-import React from 'react'
-
-const ROW = 10;
-const COLUMN = 4;
+import axios from 'axios';
+import React, { useEffect, useState } from 'react'
 
 
 const SeatingPlan = () => {
+
+    const [planeRows, setPlaneRows ] = useState(0);
+    const [planeColumns, setPlaneColumns ] = useState(0);
+    const [reservedSeats, setReservedSeats] = useState([]);
+    const [current, setCurrent] = useState([])
+
+    const flightsURL = `http://localhost:3000/flights.json`
+
+    useEffect(() => {
+        axios(flightsURL).then((response) => {
+            setPlaneRows(response.data[0].airplane.rows)
+            setPlaneColumns(response.data[0].airplane.columns)
+            setReservedSeats(response.data[0].reservations)
+        })
+    },[])
+
+    const listReservedSeats = (reservedSeats) => {
+        const reserved = [];
+        for (let i = 0; i < reservedSeats.length; i++) {
+            const element = reservedSeats[i];
+            reserved.push(`${element.row}${element.column}`)
+        }
+        return reserved
+    }
 
     const generateSeats = (numberOfRows,numberOfColumns) => {
         let columns = createLetters(numberOfColumns);
@@ -35,15 +57,24 @@ const SeatingPlan = () => {
         return numbers
     }
 
-    const planeSeats = generateSeats(ROW,COLUMN)
+    const planeSeats = generateSeats(planeRows,planeColumns)
 
-    const seatTaken = (bool) =>{
-        if(bool) return 'seat-taken'
-        else return 'seat-buttons'
+    const takenSeats = listReservedSeats(reservedSeats);
+
+    const seatTaken = (bool, seat) =>{
+        if(bool) {
+            return 'seat-taken'
+        } else if (current.includes(seat)) {
+            return 'seat-taken'
+        } else { 
+            return 'seat-buttons'
+        }
     }
 
     const _handleBooking = (e) => {
         console.log(e.target.value)
+        setCurrent([...current,e.target.value])
+
     }
 
     return (
@@ -54,7 +85,7 @@ const SeatingPlan = () => {
                             <div className='row-buttons'>
                                 {row.map((seat) => {
                                     return(
-                                        <button value={seat.code} onClick={_handleBooking} className={seatTaken(seat.reserved)}>{seat.seatNumber}</button>
+                                        <button value={seat.code} onClick={_handleBooking} className={seatTaken(takenSeats.includes(seat.code), seat.code)}>{seat.seatNumber}</button>
                                         )
                                 })}
                             </div>
