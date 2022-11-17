@@ -19,7 +19,7 @@ export const useIdLoggedIn = () => {
   return loggedIn;
 };
 
-export const login = (params) => {
+export const login = (params, navigate) => {
   const requestOptions = {
     method: "POST",
     credentials: "include",
@@ -31,13 +31,14 @@ export const login = (params) => {
     .then((json) => {
       console.log(json);
       console.log("you are login welocome");
+      navigate("/SearchPage");
     })
     .catch((err) => {
       console.log(err);
     });
 };
 
-export const logout = (params) => {
+export const logout = (params, navigate) => {
   const requestOptions = {
     method: "POST",
     credentials: "include",
@@ -48,6 +49,7 @@ export const logout = (params) => {
     .then((response) => response.json())
     .then((json) => {
       console.log(json);
+      navigate("/");
       console.log("lol");
     })
     .catch((err) => {

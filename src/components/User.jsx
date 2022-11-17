@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import { useIdLoggedIn, login, logout } from "../hooks";
+import { useNavigate } from "react-router-dom";
 
 const User = function () {
   const isLoggedIn = useIdLoggedIn();
-
+  const navigate = useNavigate();
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -19,12 +20,12 @@ const User = function () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    login(state);
+    login(state, navigate);
   };
 
   const handleLogout = (event) => {
     event.preventDefault();
-    logout(state);
+    logout(state, navigate);
   };
 
   return (
