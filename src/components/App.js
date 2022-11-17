@@ -4,7 +4,7 @@ import Flight from './Flight';
 import Flights from './Flights';
 import SearchPage from './SearchPage';
 import Airplane from './Airplane';
-import axios from 'axios'
+
 
 // const api = axios.create({
 //   baseURL: 
@@ -21,6 +21,7 @@ function App() {
       <hr></hr>
       <SearchPage />
       <hr></hr>
+
     </div>
   );
 }
