@@ -1,6 +1,9 @@
 import React, { useState } from "react";
+import { useIdLoggedIn, login, logout } from "../hooks";
 
 const User = function () {
+  const isLoggedIn = useIdLoggedIn();
+
   const [state, setState] = useState({
     email: "",
     password: "",
@@ -16,11 +19,19 @@ const User = function () {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log(state);
+    login(state);
+  };
+
+  const handleLogout = (event) => {
+    event.preventDefault();
+    logout(state);
   };
 
   return (
-    <div className="App">
+    <div>
+      <div>
+        <h1>Logged in</h1>
+      </div>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <label>Email</label>
@@ -43,6 +54,7 @@ const User = function () {
         <div className="form-control">
           <label></label>
           <button type="submit">Login</button>
+          <button onClick={handleLogout}>Sign Out</button>
         </div>
       </form>
     </div>

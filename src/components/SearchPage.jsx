@@ -1,7 +1,8 @@
 import React from 'react'
 import SearchHeader from "./SearchHeader"
 import SearchFlight from "./SearchFlight"; 
-import SearchFlightResult from "./SearchFlightResult";
+// import SearchFlight2 from "./SearchFlight2"; 
+
 
 function SearchPage() {
     return (
@@ -10,8 +11,7 @@ function SearchPage() {
         <hr></hr>
         <SearchFlight />
         <hr></hr>
-        <SearchFlightResult />
-        <hr></hr>
+        
         </div>
     );
 }
