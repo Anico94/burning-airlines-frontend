@@ -8,6 +8,7 @@ import User from "./User";
 import SearchPage from "./SearchPage";
 import axios from "axios";
 import {BrowserRouter, Routes, Route, Link} from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 // const api = axios.create({
 //   baseURL:

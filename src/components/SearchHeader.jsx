@@ -4,8 +4,6 @@ function SearchHeader() {
     return (
         <div>
 
-            Header coming soon!
-
 
 
 

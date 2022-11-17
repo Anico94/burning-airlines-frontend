@@ -27,9 +27,9 @@ const User = function () {
       {isLoggedIn ? (
         <h1>Logged in</h1>
       ) : (
-        <form onSubmit={handleSubmit}>
-          <div className="form-control">
-            <label>Email</label>
+        <form onSubmit={handleSubmit} className='p-4 p-md-5 border rounded-3 bg-light'>
+          <div>
+            <label className="form-floating mb-3">Email</label>
             <input
               type="text"
               name="email"
@@ -37,8 +37,8 @@ const User = function () {
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-control">
-            <label>Password</label>
+          <div>
+            <label className="form-floating mb-3">Password</label>
             <input
               type="password"
               name="password"
@@ -46,13 +46,16 @@ const User = function () {
               onChange={handleInputChange}
             />
           </div>
-          <div className="form-control">
-            <label></label>
-            <button type="submit">Login</button>
+  
+          <div >
+          <button className="w-100 btn btn-lg btn-primary"> Sign up</button>
           </div>
+         
         </form>
       )}
     </div>
   );
 };
+
+
 export default User;

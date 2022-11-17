@@ -1,6 +1,6 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import flightsAPI from '../config/api';
-
+import axios from 'axios';
 
 const SearchFlight = function() {
     const airports = ['BNE', 'SYD', 'MEL'] //this will come from the data base
@@ -10,7 +10,7 @@ const SearchFlight = function() {
     }
 
     const [formState, setFormState] = useState(initialFormState)
-
+    const [flights, setFlights] = useState([])
 
    function handleChange(event) {
         setFormState({
@@ -21,7 +21,7 @@ const SearchFlight = function() {
 
     async function searchFlightAPI(data) {
         const response = await flightsAPI.get('/flights.json')
-        console.log ("response is: ", response)
+        console.log ("response is: ", response.data)
         console.log ("data is: ", data)
         return response.data
     }
@@ -29,9 +29,15 @@ const SearchFlight = function() {
     function handleSubmit(event) {
             event.preventDefault()
             searchFlightAPI(event)  
-            .then((formState) => setFormState(formState))
+            .then((responseData) => setFlights(responseData))
             .catch((error) => console.log(error))
     };
+
+    // useEffect(() => {
+    //     axios(`http://localhost:3000/flights.json`).then((event) => {
+    //         setFormState(event.target.name);
+    //     });
+    // }, [ ]);
 
     
     return(
@@ -74,7 +80,11 @@ const SearchFlight = function() {
         
         <div>
             <h3>Search Results are:</h3>
-            <p>{formState.data}</p>
+            <h4>Flights ID | Origin | Destination | Date</h4>
+            {flights.map((flight) => {
+
+                return <p>{flight.flight_number}, {flight.origin}, {flight.destination}, {flight.date}</p>
+            })}
         </div>
 
         </>
