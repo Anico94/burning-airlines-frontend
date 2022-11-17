@@ -1,11 +1,13 @@
-import React from 'react'
+import React from "react";
+import Plane from "./Plane";
 
-const Airplane = function() {
+const Airplane = function () {
+  return (
+    <div>
+      <h1>AGK airline</h1>
+      <Plane />
+    </div>
+  );
+};
 
-    return(
-        <div>
-        </div>
-    )
-}
-
-export default Airplane
+export default Airplane;
